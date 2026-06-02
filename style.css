@@ -1,7 +1,198 @@
+```css
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-body{font-family:Arial,sans-serif;background:#f4f4f4;margin:0}
-.app{max-width:900px;margin:auto;background:#fff;padding:15px}
-input,select,textarea,button{width:100%;padding:10px;margin:5px 0;box-sizing:border-box}
-button{font-weight:bold}
-.mes{border:1px solid #ccc;padding:10px;margin-top:15px}
-.semana{background:#f7f7f7;padding:8px;margin-top:8px}
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f6f9;
+    color:#333;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:15px;
+}
+
+header{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+header h1{
+    color:#1f4e78;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    padding:15px;
+    margin-bottom:15px;
+    box-shadow:0 2px 6px rgba(0,0,0,.1);
+}
+
+.card h2{
+    margin-bottom:15px;
+    color:#1f4e78;
+}
+
+label{
+    display:block;
+    margin-top:10px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:none;
+    border-radius:6px;
+    background:#1f4e78;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#173857;
+}
+
+.botoes{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+}
+
+.acoes{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+#resultado{
+    margin-top:20px;
+}
+
+.mes-titulo{
+    text-align:center;
+    background:#1f4e78;
+    color:white;
+    padding:12px;
+    margin-top:25px;
+    border-radius:8px;
+}
+
+.nome-igreja{
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.periodo{
+    font-size:18px;
+}
+
+.semana{
+    margin-top:20px;
+}
+
+.semana-titulo{
+    background:#e8eef5;
+    border:1px solid #1f4e78;
+    border-bottom:none;
+    padding:10px;
+    font-weight:bold;
+    text-align:center;
+}
+
+.tabela-semana{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.tabela-semana th{
+    background:#1f4e78;
+    color:white;
+    padding:10px;
+    border:1px solid #000;
+}
+
+.tabela-semana td{
+    padding:10px;
+    border:1px solid #000;
+}
+
+.tabela-semana tr:nth-child(even){
+    background:#f8f8f8;
+}
+
+.dia{
+    width:40%;
+    font-weight:bold;
+}
+
+.grupo{
+    width:60%;
+}
+
+@media (max-width:768px){
+
+    .acoes{
+        grid-template-columns:1fr;
+    }
+
+    .tabela-semana th,
+    .tabela-semana td{
+        padding:8px;
+        font-size:14px;
+    }
+
+    .mes-titulo{
+        font-size:15px;
+    }
+
+}
+
+@media print{
+
+    body{
+        background:white;
+    }
+
+    button,
+    .card{
+        display:none;
+    }
+
+    #resultado{
+        display:block;
+    }
+
+    .mes-titulo{
+        page-break-before:always;
+    }
+
+    .semana{
+        page-break-inside:avoid;
+    }
+
+    .tabela-semana{
+        width:100%;
+    }
+
+}
+```
