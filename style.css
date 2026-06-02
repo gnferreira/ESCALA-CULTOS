@@ -1,0 +1,7 @@
+
+body{font-family:Arial,sans-serif;background:#f4f4f4;margin:0}
+.app{max-width:900px;margin:auto;background:#fff;padding:15px}
+input,select,textarea,button{width:100%;padding:10px;margin:5px 0;box-sizing:border-box}
+button{font-weight:bold}
+.mes{border:1px solid #ccc;padding:10px;margin-top:15px}
+.semana{background:#f7f7f7;padding:8px;margin-top:8px}

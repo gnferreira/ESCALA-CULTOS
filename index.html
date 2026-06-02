@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rodízio de Cultos</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<h1>Rodízio de Cultos</h1>
+
+<label>Nome da Igreja</label>
+<input id="igreja">
+
+<label>Mês</label>
+<select id="mes"></select>
+
+<label>Ano</label>
+<input id="ano" type="number" value="2026">
+
+<label>Período</label>
+<select id="periodo">
+<option value="1">Mensal</option>
+<option value="3">Trimestral</option>
+<option value="6">Semestral</option>
+</select>
+
+<label>Grupos (um por linha)</label>
+<textarea id="grupos" rows="8"></textarea>
+
+<h3>Semana Atual</h3>
+<select id="seg"></select>
+<select id="ter"></select>
+<select id="qui"></select>
+<select id="sab"></select>
+
+<button onclick="carregarGrupos()">Atualizar Lista</button>
+<button onclick="gerar()">Gerar Escala</button>
+
+<div id="resultado"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
