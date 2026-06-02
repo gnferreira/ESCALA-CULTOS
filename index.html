@@ -1,45 +1,146 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Rodízio de Cultos</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodízio de Cultos</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 </head>
+
 <body>
-<div class="app">
-<h1>Rodízio de Cultos</h1>
 
-<label>Nome da Igreja</label>
-<input id="igreja">
+    <div class="container">
 
-<label>Mês</label>
-<select id="mes"></select>
+        <header>
+            <h1>Rodízio de Cultos</h1>
+        </header>
 
-<label>Ano</label>
-<input id="ano" type="number" value="2026">
+        <section class="card">
 
-<label>Período</label>
-<select id="periodo">
-<option value="1">Mensal</option>
-<option value="3">Trimestral</option>
-<option value="6">Semestral</option>
-</select>
+            <h2>Dados da Igreja</h2>
 
-<label>Grupos (um por linha)</label>
-<textarea id="grupos" rows="8"></textarea>
+            <label>Nome da Igreja</label>
+            <input type="text" id="igreja">
 
-<h3>Semana Atual</h3>
-<select id="seg"></select>
-<select id="ter"></select>
-<select id="qui"></select>
-<select id="sab"></select>
+            <label>Mês Inicial</label>
+            <select id="mes">
+                <option value="0">Janeiro</option>
+                <option value="1">Fevereiro</option>
+                <option value="2">Março</option>
+                <option value="3">Abril</option>
+                <option value="4">Maio</option>
+                <option value="5">Junho</option>
+                <option value="6">Julho</option>
+                <option value="7">Agosto</option>
+                <option value="8">Setembro</option>
+                <option value="9">Outubro</option>
+                <option value="10">Novembro</option>
+                <option value="11">Dezembro</option>
+            </select>
 
-<button onclick="carregarGrupos()">Atualizar Lista</button>
-<button onclick="gerar()">Gerar Escala</button>
+            <label>Ano</label>
+            <input type="number" id="ano" value="2026">
 
-<div id="resultado"></div>
-</div>
-<script src="app.js"></script>
+        </section>
+
+        <section class="card">
+
+            <h2>Grupos</h2>
+
+            <label>Quantidade de grupos</label>
+            <input type="number" id="qtdGrupos" min="4">
+
+            <button onclick="criarCamposGrupos()">
+                Criar Campos
+            </button>
+
+            <div id="gruposContainer"></div>
+
+        </section>
+
+        <section class="card">
+
+            <h2>Semana Atual</h2>
+
+            <label>Segunda-feira</label>
+            <select id="segunda"></select>
+
+            <label>Terça-feira</label>
+            <select id="terca"></select>
+
+            <label>Quinta-feira</label>
+            <select id="quinta"></select>
+
+            <label>Sábado</label>
+            <select id="sabado"></select>
+
+            <button onclick="atualizarCombos()">
+                Atualizar Lista de Grupos
+            </button>
+
+        </section>
+
+        <section class="card">
+
+            <h2>Gerar Escalas</h2>
+
+            <div class="botoes">
+
+                <button onclick="gerarEscala(1)">
+                    Mensal
+                </button>
+
+                <button onclick="gerarEscala(3)">
+                    Trimestral
+                </button>
+
+                <button onclick="gerarEscala(6)">
+                    Semestral
+                </button>
+
+            </div>
+
+        </section>
+
+        <section class="card">
+
+            <div class="acoes">
+
+                <button onclick="salvarDados()">
+                    Salvar
+                </button>
+
+                <button onclick="carregarDados()">
+                    Carregar
+                </button>
+
+                <button onclick="window.print()">
+                    Imprimir
+                </button>
+
+                <button onclick="gerarPDF()">
+                    Exportar PDF
+                </button>
+
+            </div>
+
+        </section>
+
+        <section id="resultado">
+
+        </section>
+
+    </div>
+
+    <script src="app.js"></script>
+
 </body>
+
 </html>
+```
